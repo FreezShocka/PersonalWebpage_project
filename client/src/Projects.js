@@ -1,13 +1,13 @@
 import React from 'react';
 import Layout from './Layout';
 
-const Login = () => {
+const Projects = () => {
   return (
     <Layout>
       {/* Page-specific content goes here */}
-      <h1>Register or Log in:</h1>
+      <h1>My projects:</h1>
     </Layout>
   );
 }
 
-export default Login;
+export default Projects;
