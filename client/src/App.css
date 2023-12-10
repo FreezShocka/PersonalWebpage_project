@@ -1,0 +1,40 @@
+/* Reset some default margin and padding */
+body, h1, h2, h3, p, div {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Apply a basic styling to the body */
+  div {
+    font-family: 'Arial', sans-serif;
+    background-color: royalblue;
+  }
+  
+  /* Style for the header */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Style for the left-side links */
+  header a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  /* Style for the right-side link (Login/Register) */
+  header a:last-child {
+    margin-right: 0; /* Remove margin for the last link */
+    margin-left: auto; /* Push it to the right */
+  }
+  
+  /* Style for the main content */
+  main {
+    padding: 20px;
+  }
+  
