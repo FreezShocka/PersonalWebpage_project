@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
         {/* Hotbar content */}
         <Link to="/">
           <img
-          src="/Vanillite_pfp.png"
+          src="../Vanillite_pfp.png"
           alt="Elliot Plagge"
           className="layout-image"
           />
