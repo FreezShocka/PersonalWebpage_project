@@ -2,7 +2,7 @@
 body, h1, h2, h3, p, div {
     margin: 0;
     padding: 0;
-  }
+}
   
   /* Apply a basic styling to the body */
   div {
@@ -43,5 +43,7 @@ body, h1, h2, h3, p, div {
   /* Style for the main content */
   main {
     padding: 20px;
+    align-items: center;
+    align-content: center;
   }
   
