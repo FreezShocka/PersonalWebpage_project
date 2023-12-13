@@ -20,7 +20,6 @@ const Layout = ({ children }) => {
         <Link to="/song">Song of the Week</Link>
         <Link to="/login">Login / Register</Link>
       </header>
-      {/* Page content */}
       {children}
     </div>
   );

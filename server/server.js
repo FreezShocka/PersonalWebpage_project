@@ -1,47 +1,59 @@
 import express from 'express';
+import sqlite3 from 'sqlite3';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 
 const app = express();
 const port = 3000;
 
-// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 
-// Simulated database (replace this with an actual database)
-const usersDatabase = [
-  { email: 'user@example.com', username: 'user1', password: 'password1' },
-  // Add more users as needed
-];
+const db = new sqlite3.Database('usersDatabase.db');
 
-// Endpoint for handling login submissions
+db.run(`
+  CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email TEXT,
+    username TEXT,
+    password TEXT
+  )
+`);
+
 app.post('/api/check-login', (req, res) => {
   const { email, username } = req.body;
 
-  // Check if the email and username combination exists in the simulated database
-  const userExists = usersDatabase.some(
-    (user) => user.email === email && user.username === username
+  db.get(
+    'SELECT * FROM users WHERE email = ? AND username = ?',
+    [email, username],
+    (err, row) => {
+      if (err) {
+        console.error(err);
+        res.status(500).json({ success: false, error: 'Internal Server Error' });
+      } else if (row) {
+        res.json({ success: true });
+      } else {
+        res.status(401).json({ success: false, error: 'Invalid email and username combination' });
+      }
+    }
   );
-
-  if (userExists) {
-    // Send a success response to the client
-    res.json({ success: true });
-  } else {
-    // Send a failure response to the client
-    res.status(401).json({ success: false, error: 'Invalid email and username combination' });
-  }
 });
 
-// Endpoint for handling register submissions
 app.post('/api/register', (req, res) => {
   const { firstName, lastName, username, email } = req.body;
 
-  // Simulated logic to add the user to the database (replace with actual database logic)
-  usersDatabase.push({ firstName, lastName, username, email, password: 'password123' });
-
-  // Send a success response to the client
-  res.json({ success: true });
+  db.run(
+    'INSERT INTO users (email, username, password) VALUES (?, ?, ?)',
+    [email, username, password],
+    (err) => {
+      if (err) {
+        console.error(err);
+        res.status(500).json({ success: false, error: 'Internal Server Error' });
+      } else {
+        res.json({ success: true });
+      }
+    }
+  );
 });
 
 app.listen(port, () => {

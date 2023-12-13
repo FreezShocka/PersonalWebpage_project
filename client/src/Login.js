@@ -57,6 +57,7 @@ const Login = () => {
 
   return (
     <Layout>
+      <main>
         <h1>Register or Log in:</h1>
         <div>
         {/* Login Section */}
@@ -75,7 +76,7 @@ const Login = () => {
           <br />
           <button type="submit">Login</button>
         </form>
-      </section>
+        </section>
 
       {/* Register Section */}
       <section>
@@ -151,6 +152,7 @@ const Login = () => {
         </form>
       </section>
     </div>
+    </main>
     </Layout>
   );
 }

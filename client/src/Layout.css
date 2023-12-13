@@ -1,13 +1,13 @@
-/* Reset some default margin and padding */
-body, h1, h2, h3, p, div {
-    margin: 0;
-    padding: 0;
-}
-  
   /* Apply a basic styling to the body */
   div {
     font-family: 'Arial', sans-serif;
     background-color: royalblue;
+    color: azure;
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
   }
   
   /* Style for the header */
@@ -36,14 +36,49 @@ body, h1, h2, h3, p, div {
   
   /* Style for the right-side link (Login/Register) */
   header a:last-child {
-    margin-right: 0; /* Remove margin for the last link */
-    margin-left: auto; /* Push it to the right */
+    padding: 10px;
+    margin-right: 5;
+    margin-left: auto;
   }
   
-  /* Style for the main content */
-  main {
-    padding: 20px;
-    align-items: center;
-    align-content: center;
-  }
-  
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  flex: 1;
+  text-align: center;
+}
+
+label, div, select {
+  margin-bottom: 10px;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10%;
+  font-size: 22px;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+h1 {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+div {
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+}
