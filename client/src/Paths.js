@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Home from './Home';
-import About from './About';
-import Song from './Song';
-import Projects from './Projects';
-import Login from './Login';
+import Home from './components/Home.js';
+import About from './components/About.js';
+import Song from './components/Song.js';
+import Projects from './components/Projects.js';
+import Login from './components/Login.js';
 
-const Paths = () => {
+const getPath = () => {
   return (
     <Router>
       <Routes>
@@ -21,4 +21,4 @@ const Paths = () => {
   );
 }
 
-export default Paths;
+export default getPath;
