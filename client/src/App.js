@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import Routes from './Paths';
+// import React, { useEffect, useState } from 'react'
+// import Routes from './Paths';
 
-const App = () => {
-  return (
-    <div>
-      <Routes />
-    </div>
-  );
+// const App = () => {
+//   return (
+//     <div>
+//       <Routes />
+//     </div>
+//   );
 
   // const [backendData, setBackEndData] = useState ([{}])
   // useEffect(() => {
@@ -31,6 +31,23 @@ const App = () => {
 
   //   </div>
   // )
-}
 
-export default App;
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+
+const app = express();
+const PORT = 5000; // Choose a port for your backend
+
+app.use(cors());
+app.use(bodyParser.json());
+
+// Example route
+app.get('/', (req, res) => {
+  res.send('Server is running!');
+});
+
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
