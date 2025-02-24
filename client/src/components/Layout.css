@@ -13,7 +13,7 @@
   /* Style for the header */
   header {
     background-color: #333;
-    color: #fff;
+    color: #82e6ff;
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -29,7 +29,7 @@
   
   /* Style for the left-side links */
   header a {
-    color: #fff;
+    color: #82e6ff;
     text-decoration: none;
     margin-right: 20px;
   }

@@ -6,18 +6,20 @@ import Song from './components/Song.js';
 import Projects from './components/Projects.js';
 import Login from './components/Login.js';
 import paths from './Paths.js';
-import './components/Layout.js'
+import Layout from './components/Layout.js'
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path={paths.home} element={<Home />} />
-        <Route path={paths.about} element={<About />} />
-        <Route path={paths.song} element={<Song />} />
-        <Route path={paths.projects} element={<Projects />} />
-        <Route path={paths.login} element={<Login />} />
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route path={paths.home} element={<Home />} />
+          <Route path={paths.about} element={<About />} />
+          <Route path={paths.song} element={<Song />} />
+         <Route path={paths.projects} element={<Projects />} />
+          <Route path={paths.login} element={<Login />} />
+       </Routes>
+      </Layout>
     </Router>
   );
 

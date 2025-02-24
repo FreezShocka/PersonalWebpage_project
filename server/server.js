@@ -1,7 +1,7 @@
-import express from 'express';
-import sqlite3 from 'sqlite3';
-import bodyParser from 'body-parser';
-import cors from 'cors';
+const express = require('express');
+const sqlite3 = require('sqlite3');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
 const port = 3000;
@@ -21,11 +21,11 @@ db.run(`
 `);
 
 app.post('/api/check-login', (req, res) => {
-  const { email, username } = req.body;
+  const { email, password } = req.body;
 
   db.get(
-    'SELECT * FROM users WHERE email = ? AND username = ?',
-    [email, username],
+    'SELECT * FROM users WHERE email = ? AND password = ?',
+    [email, password],
     (err, row) => {
       if (err) {
         console.error(err);
@@ -33,14 +33,14 @@ app.post('/api/check-login', (req, res) => {
       } else if (row) {
         res.json({ success: true });
       } else {
-        res.status(401).json({ success: false, error: 'Invalid email and username combination' });
+        res.status(401).json({ success: false, error: 'Invalid email and password combination' });
       }
     }
   );
 });
 
 app.post('/api/register', (req, res) => {
-  const { firstName, lastName, username, email } = req.body;
+  const { firstName, lastName, username, email, password } = req.body;
 
   db.run(
     'INSERT INTO users (email, username, password) VALUES (?, ?, ?)',
@@ -59,5 +59,3 @@ app.post('/api/register', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-
-app.listen(5000, () => {console.log("Server started on port 5000")})
