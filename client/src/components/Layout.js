@@ -4,7 +4,7 @@ import './Layout.css';
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className="layout-container">
       {/* Your hotbar goes here */}
       <header>
         {/* Hotbar content */}
@@ -20,7 +20,9 @@ const Layout = ({ children }) => {
         <Link to="/song">Song of the Week</Link>
         <Link to="/login">Login / Register</Link>
       </header>
-      {children}
+      <div className="content-container">
+        {children}
+      </div>
     </div>
   );
 }
