@@ -5,9 +5,7 @@ import './Layout.css';
 const Layout = ({ children }) => {
   return (
     <div className="layout-container">
-      {/* Your hotbar goes here */}
       <header>
-        {/* Hotbar content */}
         <Link to="/">
           <img
           src="../Vanillite_pfp.png"
