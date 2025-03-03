@@ -4,7 +4,6 @@ import Layout from './Layout.js';
 const Home = () => {
   return (
     <Layout>
-      <h1>Home Page</h1>
       <p>
         Welcome to my website! Please follow the links above to visit different pages.
       </p>

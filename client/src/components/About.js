@@ -31,7 +31,7 @@ const About = () => {
           rel="noopener noreferrer"
         >
           <img
-            src="https://yt3.googleusercontent.com/ytc/APkrFKaHSJNmLAK2q87SWOTXyDaXiJXpukZs2NzMaXdkzw=s900-c-k-c0x00ffffff-no-rj"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA5_X2p8jMuixdsIOgNra6aNRPp09yWzONpw&s"
             alt="Artstation"
             style={{ width: '50px', margin: '10px' }}
           />
@@ -49,6 +49,19 @@ const About = () => {
             style={{ width: '50px', margin: '10px' }}
           />
         </a>
+
+        {/* pixiv Link */}
+        <a
+          href="https://www.pixiv.net/en/users/35218195"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJyYSdLZGPRM0gHEhLDLQEygAxvxXijtwSYA&s"
+            alt="pixiv"
+            style={{ width: '50px', margin: '10px' }}
+          />
+        </a>        
       </div>
     </div>
     </Layout>
