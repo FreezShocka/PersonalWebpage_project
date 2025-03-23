@@ -47,7 +47,7 @@ const Projects = () => {
             </p>
             <div className="media-screen">
               {/* Placeholder for images or videos */}
-              <img src="path/to/uproot-image.jpg" alt="Uproot" />
+              <img src="/public/Uproot_GardenBack.png" alt="Uproot" />
             </div>
           </div>
           <div className="project-box">
