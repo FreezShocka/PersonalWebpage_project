@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from './Layout.js';
-import './Projects.css'; // Import the CSS file for styling
+import './Projects.css';
 
 const Projects = () => {
   return (
@@ -25,7 +25,6 @@ const Projects = () => {
               Desolate Haze is a post-apocalyptic survival game where players navigate through a desolate world, scavenging for resources and fighting off hostile creatures.
             </p>
             <div className="media-screen">
-              {/* Embed BlueSky video */}
               <iframe
                 width="560"
                 height="315"
